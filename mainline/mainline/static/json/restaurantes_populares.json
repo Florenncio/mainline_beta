@@ -1,0 +1,28 @@
+[
+  {
+    "id": 1,
+    "nome": "RESTAURANTE POPULAR DE MANGABEIRA",
+    "endereco": "RUA FRANCISCO PEREIRA DE SOUZA - S/N",
+    "bairro": "MANGABEIRA",
+    "horario_funcionamento": "08 ÁS 17:00HS",
+    "telefone": "98793-0504 / 98776-6550",
+    "coordenador": "ROSE KELY PAULINO DE SOUZA | ÍTALO MAX DE L. CUNHA PROCÓPIO (Coordenador Nutricional)",
+    "latitude": "-7,17008500",
+    "longitude": "-34,84151100",
+    "creation_time": "2018-03-01 16:56:56",
+    "modification_time": "2018-07-23 20:19:06"
+  },
+  {
+    "id": 2,
+    "nome": "RESTAURANTE POPULAR DA LAGOA",
+    "endereco": "PARQUE SÓLON DE LUCENA - 196",
+    "bairro": "CENTRO",
+    "horario_funcionamento": "08 ÁS 17:00HS",
+    "telefone": "3214-1958 / 98818-3449",
+    "coordenador": "CATARINA DE VASCONCELOS BARBOSA XAVIER (Nutricionista responsável pela coordenação geral)",
+    "latitude": "-7,12182300",
+    "longitude": "-34,87881400",
+    "creation_time": "2018-03-01 16:56:56",
+    "modification_time": "2018-07-23 20:19:39"
+  }
+]

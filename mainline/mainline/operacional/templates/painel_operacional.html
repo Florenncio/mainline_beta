@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+{% load static %}
+{% load leaflet_tags %}
+
+{% block main %}
+    <div class="row section">
+        <div  class="col s4 m3">
+            <div class="card">
+                    <ul class="collapsible with-header">
+                        <li>
+                            <div class="collapsible-header"><i class="material-icons">account_circle</i>Cliente</div>
+                            <div class="collapsible-body"><span>Clientes que estão com comunicando com a central de monitoramento</span></div>
+                        </li>
+                        <li>
+                            <div class="collapsible-header"><i class="material-icons">signal_wifi_off</i>Cliente + Off-line</div>
+                            <div class="collapsible-body"><span>Clientes que não estão comunicando com a central de monitoramento.</span></div>
+                        </li>
+                        <li>
+                            <div class="collapsible-header"><i class="material-icons">beach_access</i>Cliente Ocioso</div>
+                            <div class="collapsible-body"><span>Clientes não estou comunicando por um grande período de tempo.</span></div>
+                        </li>
+                        <li>
+                            <div class="collapsible-header"><i class="material-icons">battery_std</i>Bateria</div>
+                            <div class="collapsible-body"><span>Identificar os clientes que as baterias não estão carregadas.</span></div>
+                        </li>
+                            <li>
+                            <div class="collapsible-header"><i class="material-icons">motorcycle</i>Agenete Tático Móvel (A.T.M.)</div>
+                            <div class="collapsible-body"><span>Localização do ATM em tempo real.</span></div>
+                        </li>
+                        <li>
+                            <div class="collapsible-header"><i class="material-icons">flash_off</i>Energia</div>
+                            <div class="collapsible-body"><span>Queda de energia.</span></div>
+                        </li>
+                        <li>
+                            <div class="collapsible-header"><i class="material-icons">new_releases</i>Intrusão</div>
+                            <div class="collapsible-body"><span>Há uma intrusão nesse cliente.</span></div>
+                        </li>
+                            <li>
+                            <div class="collapsible-header"><i class="material-icons">notifications_active</i>Disparos Isolados</div>
+                            <div class="collapsible-body"><span>Varios eventos de disparos em um unico setor.</span></div>
+                        </li>
+                        <li>
+                            <div class="collapsible-header"><i class="material-icons">chrome_reader_mode</i>Ordem de Serviço</div>
+                            <div class="collapsible-body"><span>Ordem de serviço pedente para esse cliente.</span></div>
+                        </li>
+                        <li>
+                            <div class="collapsible-header"><i class="material-icons">home</i>Combate Segurança</div>
+                            <div class="collapsible-body"><span>Localização da base.</span></div>
+                        </li>
+                      </ul>
+            </div>
+        </div>
+        <div  class="section col s8 m9">
+            <div class="card">
+                {% leaflet_map "yourmap" callback="window.map_init_basic" %}
+            </div>
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,156 @@
+{% load static %}
+{% load leaflet_tags %}
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Mainline</title>
+
+        <!-- My editions CSS -->
+        <link rel="stylesheet" type="text/css" href="{% static "css/main.css" %}">
+        <link rel="stylesheet" type="text/css" href="{% static "css/my_leaflet.css" %}">
+
+        <!-- Import CSS -->
+        <link rel="stylesheet" type="text/css" href="{% static "css/materialize.min.css" %}">
+
+
+        {% leaflet_js %}
+        {% leaflet_css %}
+    </head>
+    <body>
+        <header>
+            <nav class="nav-wrapper">
+                <a class="brand-logo center title">Mainline</a>
+            </nav>
+        </header>
+
+        <main>
+            {% block main %}{% endblock %}            
+        </main>
+
+
+        <footer class="page-footer">
+          <div class="container">
+            <div class="row">
+              <div class="col l6 s12">
+                <h5 class="white-text">Footer Content</h5>
+                <p class="grey-text text-lighten-4">You can use rows and columns here to organize your footer content.</p>
+              </div>
+              <div class="col l4 offset-l2 s12">
+                <h5 class="white-text">Links</h5>
+                <ul>
+                  <li><a class="grey-text text-lighten-3" href="#!">Link 1</a></li>
+                  <li><a class="grey-text text-lighten-3" href="#!">Link 2</a></li>
+                  <li><a class="grey-text text-lighten-3" href="#!">Link 3</a></li>
+                  <li><a class="grey-text text-lighten-3" href="#!">Link 4</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="footer-copyright">
+            <div class="container">
+            © 2016 Copyright Text
+            <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
+            </div>
+          </div>
+        </footer>
+            
+
+        <!-- Import scripts -->
+        <script src="{% static "js/jquery-3.3.1.min.js" %}"></script>
+        <script src="{% static "js/jquery-ui.min.js" %}"></script>
+        <script src="{% static "js/jquery.mask.js" %}"></script>
+        <script src="{% static "js/Chart.bundle.min.js" %}"></script>
+        <script src="{% static "js/popper.min.js" %}"></script>
+        <script src="{% static "js/prefix-free.js" %}"></script>
+        <script src="{% static "js/materialize.min.js" %}"></script>
+        <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+        <!-- My scripts -->
+        <script src="{% static "js/chart-op.js" %}"></script>
+
+        <script>
+        /*
+        $.ajax("{% static "json/cozinha_comunitarias.json" %}",{
+            dataType: "json",
+            success: addPopupsFromLocations,
+            error: function(xhr, st, et) {
+                console.warn(et);
+            }
+            })
+        </script>
+
+        <script type="text/javascript">
+        
+            function map_init_basic (map, options) {
+                
+                var cozinhacomIcon = L.icon({
+                    iconUrl: '{% static "img/pin-19.png" %}',
+                
+                    iconSize:     [40, 40], // size of the icon
+                    iconAnchor:   [22, 94], // point of the icon which will correspond to marker's location
+                    popupAnchor:  [3, -86] // point from which the popup should open relative to the iconAnchor
+                });
+
+                var crasIcon = L.icon({
+                    iconUrl: '{% static "img/placeholder-29.png" %}',
+                
+                    iconSize:     [35, 35], // size of the icon
+                    iconAnchor:   [22, 94], // point of the icon which will correspond to marker's location
+                    popupAnchor:  [3, -86] // point from which the popup should open relative to the iconAnchor
+                });
+                
+                /*
+                // Download GeoJSON via Ajax
+                $.getJSON("{% static "json/cozinhas_comunitarias.json" %}", function (latitude,logitude) {
+                    // Add GeoJSON layer
+                    L.marker(latitude,longitude).addTo(map);
+                });
+                */    
+        
+
+                // COMBATE BASE
+                 L.marker([-7.128360, -34.863939]).addTo(map).bindPopup('COMBATE SEGURANÇA');
+                
+                // COZINHA COMUNITÁRIA
+                L.marker([-7.197451, -34.882398], {icon: cozinhacomIcon}).addTo(map).bindPopup('COZINHA COMUNITÁRIA DO GERVÁSIO MAIA');
+                L.marker([-7.183281, -34.89717], {icon: cozinhacomIcon}).addTo(map).bindPopup('COZINHA COMUNITÁRIA DO TAIPA');
+                L.marker([-7.156284, -34.883147], {icon: cozinhacomIcon}).addTo(map).bindPopup('COZINHA COMUNITÁRIA DA BELA VISTA');
+                L.marker([-7.154065, -34.898931], {icon: cozinhacomIcon}).addTo(map).bindPopup('COZINHA COMUNITÁRIA DO BAIRRO DOS NOVAIS');
+                L.marker([-7.146334, -34.831493], {icon: cozinhacomIcon}).addTo(map).bindPopup('COZINHA COMUNITÁRIA DO TIMBÓ');
+
+                // CRAS
+                L.marker([-7.142055, -34.91382], {icon: crasIcon}).addTo(map).bindPopup('CRAS Alto do Mateus');
+                L.marker([-7.165252, -34.872762], {icon: crasIcon}).addTo(map).bindPopup('CRAS Cristo/Rangel');
+                L.marker([-7.146578, -34.888187], {icon: crasIcon}).addTo(map).bindPopup('CRAS Cruz das Armas');
+                L.marker([-7.12527, -34.900323], {icon: crasIcon}).addTo(map).bindPopup('CRAS Ilha do Bispo');
+                L.marker([-7.203479, -34.884697], {icon: crasIcon}).addTo(map).bindPopup('CRAS Gramame');
+                L.marker([-7.178329, -34.831493], {icon: crasIcon}).addTo(map).bindPopup('CRAS Grotao');
+                L.marker([-7.098642, -34.866382], {icon: crasIcon}).addTo(map).bindPopup('CRAS Mandacaru');
+                L.marker([-7.172896, -34.843837], {icon: crasIcon}).addTo(map).bindPopup('CRAS Mangabeira');
+                L.marker([-7.105312, -34.867173], {icon: crasIcon}).addTo(map).bindPopup('CRAS Padre Ze');
+                L.marker([-7.106765, -34.840285], {icon: crasIcon}).addTo(map).bindPopup('CRAS Sao Jose');
+                L.marker([-7.204871, -34.849219], {icon: crasIcon}).addTo(map).bindPopup('CRAS Valentina');
+                L.marker([-7.19912, -34.881277], {icon: crasIcon}).addTo(map).bindPopup('CRAS Gervasio Maia');
+                L.marker([-7.168458, -34.864095], {icon: crasIcon}).addTo(map).bindPopup('Proteção Social Basica');
+
+                var circle = L.circle([-7.128360, -34.863939], {
+                    color: 'red',
+                    fillColor: '#f03',
+                    fillOpacity: 0.5,
+                    radius: 1000
+                }).addTo(map);
+
+            }
+        </script>
+
+        <script>
+          $(document).ready(function(){
+            $('.collapsible').collapsible();
+          });
+        </script>
+    </body>
+</html>

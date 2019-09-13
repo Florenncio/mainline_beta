@@ -1,0 +1,67 @@
+[
+  {
+    "id": 1,
+    "nome": "COZINHA COMUNIT�RIA DO GERV�SIO MAIA",
+    "endereco": "RUA DO ARCO - 782",
+    "bairro": "GERV�SIO MAIA",
+    "horario_funcionamento": "08 �S 17:00HS",
+    "telefone": "3220-1170 / 98771-3206",
+    "coordenador": "",
+    "latitude": "-7,19745100",
+    "longitude": "-34,88239800",
+    "creation_time": "2018-02-28 19:58:48",
+    "modification_time": "2018-03-01 16:43:26"
+  },
+  {
+    "id": 2,
+    "nome": "COZINHA COMUNIT�RIA DO TAIPA",
+    "endereco": "RUA JO�O LOUREN�O DE SOUZA - S/N",
+    "bairro": "COSTA E SILVA",
+    "horario_funcionamento": "08 �S 17:00HS",
+    "telefone": "3214-5760 / 98880-7839",
+    "coordenador": "MARIA ROSELIA ALVES DA HORA | OZIEL BEN�CIO SANTANA DA SILVA(COORDENADOR NUTRICIONAL)",
+    "latitude": "-7,18328100",
+    "longitude": "-34,89717000",
+    "creation_time": "2018-02-28 19:58:48",
+    "modification_time": "2018-07-23 20:16:28"
+  },
+  {
+    "id": 3,
+    "nome": "COZINHA COMUNIT�RIA DA BELA VISTA",
+    "endereco": "RUA FERNANDO CUNHA LIMA - S/N",
+    "bairro": "BELA VISTA",
+    "horario_funcionamento": "08 �S 17:00HS",
+    "telefone": "3218-6150 / 8670-1700",
+    "coordenador": "ANA NUBIA CONFESSOR COSTA VIEIRA",
+    "latitude": "-7,15628400",
+    "longitude": "-34,88314700",
+    "creation_time": "2018-02-28 19:58:48",
+    "modification_time": "2018-05-02 15:23:58"
+  },
+  {
+    "id": 4,
+    "nome": "COZINHA COMUNIT�RIA DO BAIRRO DOS NOVAIS",
+    "endereco": "RUA SANTO AMARO - S/N",
+    "bairro": "BAIRRO DOS NOVAIS",
+    "horario_funcionamento": "08 �S 17:00HS",
+    "telefone": "3214-3477 / 98840-2523",
+    "coordenador": "MARIA DE F�TIMA FONSECA DE FIGUEIREDO | MA�RA LIANA DE SOUZA E SILVA (COORDENADORA NUTRICIONAL)",
+    "latitude": "-7,15406500",
+    "longitude": "-34,89893100",
+    "creation_time": "2018-02-28 19:58:48",
+    "modification_time": "2018-07-23 20:17:09"
+  },
+  {
+    "id": 5,
+    "nome": "COZINHA COMUNIT�RIA DO TIMB�",
+    "endereco": "RUA SELEIDA A. FERREIRA - S/N",
+    "bairro": "TIMB�",
+    "horario_funcionamento": "08 �S 17:00HS",
+    "telefone": "3218-9360 / 98772-0101",
+    "coordenador": "MARCELA OLIVEIRA ANDRADE",
+    "latitude": "-7,14633400",
+    "longitude": "-34,83149300",
+    "creation_time": "2018-02-28 19:58:48",
+    "modification_time": "2018-05-02 15:24:36"
+  }
+]
