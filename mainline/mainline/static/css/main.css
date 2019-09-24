@@ -1,5 +1,7 @@
-.title {
-    font-family: 'Courier New', Courier, monospace;
+@font-face {
+    font-family: 'Gotham-Black';
+    src: local('Gotham-Black'),
+         url('../static/fonts/Gotham-Black.ttf') format("truetype");
 }
 
 #myChart{

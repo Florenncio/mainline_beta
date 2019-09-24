@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{% load svg %}
 {% load static %}
 {% load leaflet_tags %}
 
@@ -8,23 +9,11 @@
             <div class="card">
                     <ul class="collapsible with-header">
                         <li>
-                            <div class="collapsible-header"><i class="material-icons">account_circle</i>Cliente</div>
+                            <div class="collapsible-header"><i>{% svg 'cliente' %}</i>Clientes</div>
                             <div class="collapsible-body"><span>Clientes que estão com comunicando com a central de monitoramento</span></div>
                         </li>
                         <li>
-                            <div class="collapsible-header"><i class="material-icons">signal_wifi_off</i>Cliente + Off-line</div>
-                            <div class="collapsible-body"><span>Clientes que não estão comunicando com a central de monitoramento.</span></div>
-                        </li>
-                        <li>
-                            <div class="collapsible-header"><i class="material-icons">beach_access</i>Cliente Ocioso</div>
-                            <div class="collapsible-body"><span>Clientes não estou comunicando por um grande período de tempo.</span></div>
-                        </li>
-                        <li>
-                            <div class="collapsible-header"><i class="material-icons">battery_std</i>Bateria</div>
-                            <div class="collapsible-body"><span>Identificar os clientes que as baterias não estão carregadas.</span></div>
-                        </li>
-                            <li>
-                            <div class="collapsible-header"><i class="material-icons">motorcycle</i>Agenete Tático Móvel (A.T.M.)</div>
+                            <div class="collapsible-header"><i>{% svg 'bateria' %}</i>Agenete Tático Móvel (A.T.M.)</div>
                             <div class="collapsible-body"><span>Localização do ATM em tempo real.</span></div>
                         </li>
                         <li>

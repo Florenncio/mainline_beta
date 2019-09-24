@@ -1,4 +1,5 @@
 {% load static %}
+{% load svg%}
 {% load leaflet_tags %}
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -21,8 +22,8 @@
     </head>
     <body>
         <header>
-            <nav class="nav-wrapper">
-                <a class="brand-logo center title">Mainline</a>
+            <nav class="nav-wrapper indigo lighten-5">
+                <a class="brand-logo center title">{% svg 'logo'%}</a>
             </nav>
         </header>
 
@@ -31,7 +32,7 @@
         </main>
 
 
-        <footer class="page-footer">
+        <footer class="page-footer indigo lighten-5">
           <div class="container">
             <div class="row">
               <div class="col l6 s12">
@@ -109,33 +110,57 @@
                     // Add GeoJSON layer
                     L.marker(latitude,longitude).addTo(map);
                 });
-                */    
+                */ 
         
 
                 // COMBATE BASE
                  L.marker([-7.128360, -34.863939]).addTo(map).bindPopup('COMBATE SEGURANÇA');
                 
                 // COZINHA COMUNITÁRIA
-                L.marker([-7.197451, -34.882398], {icon: cozinhacomIcon}).addTo(map).bindPopup('COZINHA COMUNITÁRIA DO GERVÁSIO MAIA');
-                L.marker([-7.183281, -34.89717], {icon: cozinhacomIcon}).addTo(map).bindPopup('COZINHA COMUNITÁRIA DO TAIPA');
-                L.marker([-7.156284, -34.883147], {icon: cozinhacomIcon}).addTo(map).bindPopup('COZINHA COMUNITÁRIA DA BELA VISTA');
-                L.marker([-7.154065, -34.898931], {icon: cozinhacomIcon}).addTo(map).bindPopup('COZINHA COMUNITÁRIA DO BAIRRO DOS NOVAIS');
-                L.marker([-7.146334, -34.831493], {icon: cozinhacomIcon}).addTo(map).bindPopup('COZINHA COMUNITÁRIA DO TIMBÓ');
+               var cozinha_gervazio = L.marker([-7.197451, -34.882398], {icon: cozinhacomIcon}).bindPopup('COZINHA COMUNITÁRIA DO GERVÁSIO MAIA');
+                cozinha_taipa = L.marker([-7.183281, -34.89717], {icon: cozinhacomIcon}).bindPopup('COZINHA COMUNITÁRIA DO TAIPA');
+                cozinha_bela_vista = L.marker([-7.156284, -34.883147], {icon: cozinhacomIcon}).bindPopup('COZINHA COMUNITÁRIA DA BELA VISTA');
+                cozinha_novais = L.marker([-7.154065, -34.898931], {icon: cozinhacomIcon}).bindPopup('COZINHA COMUNITÁRIA DO BAIRRO DOS NOVAIS');
+                cozinha_timbo = L.marker([-7.146334, -34.831493], {icon: cozinhacomIcon}).bindPopup('COZINHA COMUNITÁRIA DO TIMBÓ');
+
+                var cozinhas = L.layerGroup([
+                  cozinha_gervazio,
+                  cozinha_taipa,
+                  cozinha_bela_vista,
+                  cozinha_novais,
+                  cozinha_timbo
+                ]).addTo(map);
 
                 // CRAS
-                L.marker([-7.142055, -34.91382], {icon: crasIcon}).addTo(map).bindPopup('CRAS Alto do Mateus');
-                L.marker([-7.165252, -34.872762], {icon: crasIcon}).addTo(map).bindPopup('CRAS Cristo/Rangel');
-                L.marker([-7.146578, -34.888187], {icon: crasIcon}).addTo(map).bindPopup('CRAS Cruz das Armas');
-                L.marker([-7.12527, -34.900323], {icon: crasIcon}).addTo(map).bindPopup('CRAS Ilha do Bispo');
-                L.marker([-7.203479, -34.884697], {icon: crasIcon}).addTo(map).bindPopup('CRAS Gramame');
-                L.marker([-7.178329, -34.831493], {icon: crasIcon}).addTo(map).bindPopup('CRAS Grotao');
-                L.marker([-7.098642, -34.866382], {icon: crasIcon}).addTo(map).bindPopup('CRAS Mandacaru');
-                L.marker([-7.172896, -34.843837], {icon: crasIcon}).addTo(map).bindPopup('CRAS Mangabeira');
-                L.marker([-7.105312, -34.867173], {icon: crasIcon}).addTo(map).bindPopup('CRAS Padre Ze');
-                L.marker([-7.106765, -34.840285], {icon: crasIcon}).addTo(map).bindPopup('CRAS Sao Jose');
-                L.marker([-7.204871, -34.849219], {icon: crasIcon}).addTo(map).bindPopup('CRAS Valentina');
-                L.marker([-7.19912, -34.881277], {icon: crasIcon}).addTo(map).bindPopup('CRAS Gervasio Maia');
-                L.marker([-7.168458, -34.864095], {icon: crasIcon}).addTo(map).bindPopup('Proteção Social Basica');
+                var cras_alto_mateus = L.marker([-7.142055, -34.91382], {icon: crasIcon}).addTo(map).bindPopup('CRAS Alto do Mateus');
+                cras_cristo = L.marker([-7.165252, -34.872762], {icon: crasIcon}).addTo(map).bindPopup('CRAS Cristo/Rangel');
+                cras_cruz_armas = L.marker([-7.146578, -34.888187], {icon: crasIcon}).addTo(map).bindPopup('CRAS Cruz das Armas');
+                cras_ilha_bispo = L.marker([-7.12527, -34.900323], {icon: crasIcon}).addTo(map).bindPopup('CRAS Ilha do Bispo');
+                cras_gramame = L.marker([-7.203479, -34.884697], {icon: crasIcon}).addTo(map).bindPopup('CRAS Gramame');
+                cras_grotao = L.marker([-7.178329, -34.831493], {icon: crasIcon}).addTo(map).bindPopup('CRAS Grotao');
+                cras_mandacaru = L.marker([-7.098642, -34.866382], {icon: crasIcon}).addTo(map).bindPopup('CRAS Mandacaru');
+                cras_magabeira = L.marker([-7.172896, -34.843837], {icon: crasIcon}).addTo(map).bindPopup('CRAS Mangabeira');
+                cras_padre_ze = L.marker([-7.105312, -34.867173], {icon: crasIcon}).addTo(map).bindPopup('CRAS Padre Ze');
+                cras_sao_jose = L.marker([-7.106765, -34.840285], {icon: crasIcon}).addTo(map).bindPopup('CRAS Sao Jose');
+                cras_valentina = L.marker([-7.204871, -34.849219], {icon: crasIcon}).addTo(map).bindPopup('CRAS Valentina');
+                cras_gervasio_maia = L.marker([-7.19912, -34.881277], {icon: crasIcon}).addTo(map).bindPopup('CRAS Gervasio Maia');
+                cras_pretecao_social = L.marker([-7.168458, -34.864095], {icon: crasIcon}).addTo(map).bindPopup('Proteção Social Basica');
+
+                var cras = l.layerGroup([
+                  cras_alto_mateus,
+                  cras_cristo,cras_cruz_armas,
+                  cras_ilha_bispo,cras_gramame,
+                  cras_grotao,
+                  cras_mandacaru,
+                  cras_magabeira,
+                  cras_padre_ze,
+                  cras_sao_jose,
+                  cras_valentina,
+                  cras_gervasio_maia,
+                  cras_pretecao_social,
+                ]);
+
+                var grayscale = L.tileLayer(mapboxUrl, {id: 'yourmap', attribution: mapboxAttribution});
 
                 var circle = L.circle([-7.128360, -34.863939], {
                     color: 'red',
@@ -144,6 +169,12 @@
                     radius: 1000
                 }).addTo(map);
 
+                var overlayMaps = {
+                  "CRAS" : cras,
+                  "Cozinhas" : cozinhas,
+                };
+
+                L.control.layers(overlayMaps).addTo(map);
             }
         </script>
 
