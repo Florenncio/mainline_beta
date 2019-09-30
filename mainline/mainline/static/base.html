@@ -23,7 +23,7 @@
     <body>
         <header>
             <nav class="nav-wrapper indigo lighten-5">
-                <a class="brand-logo center title">{% svg 'logo'%}</a>
+                <a class="brand-logo center title"><object id="front-page-logo" class="responsive-img" width="170px" type="image/svg+xml" data="{% svg 'cliente' %}">Your browser does not support SVG.</object></a>
             </nav>
         </header>
 
@@ -85,24 +85,142 @@
         </script>
 
         <script type="text/javascript">
+
+            var size = [50, 50],
+                ancho = [22,94],
+                popup = [3, -86]
         
             function map_init_basic (map, options) {
                 
-                var cozinhacomIcon = L.icon({
-                    iconUrl: '{% static "img/pin-19.png" %}',
+                var AtmIcon = L.icon({
+                    iconUrl: '{% static "img/pin.png" %}',
                 
-                    iconSize:     [40, 40], // size of the icon
-                    iconAnchor:   [22, 94], // point of the icon which will correspond to marker's location
-                    popupAnchor:  [3, -86] // point from which the popup should open relative to the iconAnchor
+                    iconSize:     size,
+                    iconAnchor:   ancho,
+                    popupAnchor:  popup
                 });
 
-                var crasIcon = L.icon({
-                    iconUrl: '{% static "img/placeholder-29.png" %}',
+                var BaseIcon = L.icon({
+                    iconUrl: '{% static "img/pin-25.png" %}',
                 
-                    iconSize:     [35, 35], // size of the icon
-                    iconAnchor:   [22, 94], // point of the icon which will correspond to marker's location
-                    popupAnchor:  [3, -86] // point from which the popup should open relative to the iconAnchor
+                    iconSize:     size,
+                    iconAnchor:   ancho,
+                    popupAnchor:  popup
                 });
+
+                var BateriaAusenteIcon = L.icon({
+                    iconUrl: '{% static "img/pin-12.png" %}',
+                
+                    iconSize:     size,
+                    iconAnchor:   ancho,
+                    popupAnchor:  popup
+                });
+
+                var BateriaFracaIcon = L.icon({
+                    iconUrl: '{% static "img/bateria_fraca.png" %}',
+                
+                    iconSize:     size,
+                    iconAnchor:   ancho,
+                    popupAnchor:  popup
+                });
+
+                var BateriaSemCargaIcon = L.icon({
+                    iconUrl: '{% static "img/bateria_sem_carga.png" %}',
+                
+                    iconSize:     size,
+                    iconAnchor:   ancho,
+                    popupAnchor:  popup
+                });
+
+                var ClienteOffIcon = L.icon({
+                    iconUrl: '{% static "img/cliente_off.png" %}',
+                
+                    iconSize:     size,
+                    iconAnchor:   ancho,
+                    popupAnchor:  popup
+                });
+
+                var ClienteOnIcon = L.icon({
+                    iconUrl: '{% static "img/cliente_on.png" %}',
+                
+                    iconSize:     size,
+                    iconAnchor:   ancho,
+                    popupAnchor:  popup
+                });
+
+                var ClienteSemComIcon = L.icon({
+                    iconUrl: '{% static "img/cliente_sem_com.png" %}',
+                
+                    iconSize:     size,
+                    iconAnchor:   ancho,
+                    popupAnchor:  popup
+                });
+
+                var DesarmadosIcon = L.icon({
+                    iconUrl: '{% static "img/desarmados.png" %}',
+                
+                    iconSize:     size,
+                    iconAnchor:   ancho,
+                    popupAnchor:  popup
+                });
+
+                var DisparosIcon = L.icon({
+                    iconUrl: '{% static "img/disparos.png" %}',
+                
+                    iconSize:     size,
+                    iconAnchor:   ancho,
+                    popupAnchor:  popup
+                });
+
+                var DisparosIsoIcon = L.icon({
+                    iconUrl: '{% static "img/disparos_iso.png" %}',
+                
+                    iconSize:     size,
+                    iconAnchor:   ancho,
+                    popupAnchor:  popup
+                });
+
+                var Os72hIcon = L.icon({
+                    iconUrl: '{% static "img/os_72h.png" %}',
+                
+                    iconSize:     size,
+                    iconAnchor:   ancho,
+                    popupAnchor:  popup
+                });
+
+                var Os92hIcon = L.icon({
+                    iconUrl: '{% static "img/os_92h.png" %}',
+                
+                    iconSize:     size,
+                    iconAnchor:   ancho,
+                    popupAnchor:  popup
+                });
+
+                var OsPenIcon = L.icon({
+                    iconUrl: '{% static "img/os_pen.png" %}',
+                
+                    iconSize:     size,
+                    iconAnchor:   ancho,
+                    popupAnchor:  popup
+                });
+
+                var PanicoIcon = L.icon({
+                    iconUrl: '{% static "img/panico.png" %}',
+                
+                    iconSize:     size,
+                    iconAnchor:   ancho,
+                    popupAnchor:  popup
+                });
+
+                var QuedaEnergiaIcon = L.icon({
+                    iconUrl: '{% static "img/queda_energia.png" %}',
+                
+                    iconSize:     size,
+                    iconAnchor:   ancho,
+                    popupAnchor:  popup
+                });
+
+
                 
                 /*
                 // Download GeoJSON via Ajax
@@ -114,14 +232,14 @@
         
 
                 // COMBATE BASE
-                 L.marker([-7.128360, -34.863939]).addTo(map).bindPopup('COMBATE SEGURANÇA');
+                 L.marker([-7.128360, -34.863939], {icon: BaseIcon}).addTo(map).bindPopup('COMBATE SEGURANÇA');
                 
                 // COZINHA COMUNITÁRIA
-               var cozinha_gervazio = L.marker([-7.197451, -34.882398], {icon: cozinhacomIcon}).bindPopup('COZINHA COMUNITÁRIA DO GERVÁSIO MAIA');
-                cozinha_taipa = L.marker([-7.183281, -34.89717], {icon: cozinhacomIcon}).bindPopup('COZINHA COMUNITÁRIA DO TAIPA');
-                cozinha_bela_vista = L.marker([-7.156284, -34.883147], {icon: cozinhacomIcon}).bindPopup('COZINHA COMUNITÁRIA DA BELA VISTA');
-                cozinha_novais = L.marker([-7.154065, -34.898931], {icon: cozinhacomIcon}).bindPopup('COZINHA COMUNITÁRIA DO BAIRRO DOS NOVAIS');
-                cozinha_timbo = L.marker([-7.146334, -34.831493], {icon: cozinhacomIcon}).bindPopup('COZINHA COMUNITÁRIA DO TIMBÓ');
+               var cozinha_gervazio = L.marker([-7.197451, -34.882398], {icon: AtmIcon}).bindPopup('COZINHA COMUNITÁRIA DO GERVÁSIO MAIA');
+                cozinha_taipa = L.marker([-7.183281, -34.89717], {icon: AtmIcon}).bindPopup('COZINHA COMUNITÁRIA DO TAIPA');
+                cozinha_bela_vista = L.marker([-7.156284, -34.883147], {icon: AtmIcon}).bindPopup('COZINHA COMUNITÁRIA DA BELA VISTA');
+                cozinha_novais = L.marker([-7.154065, -34.898931], {icon: AtmIcon}).bindPopup('COZINHA COMUNITÁRIA DO BAIRRO DOS NOVAIS');
+                cozinha_timbo = L.marker([-7.146334, -34.831493], {icon: AtmIcon}).bindPopup('COZINHA COMUNITÁRIA DO TIMBÓ');
 
                 var cozinhas = L.layerGroup([
                   cozinha_gervazio,
@@ -132,19 +250,19 @@
                 ]).addTo(map);
 
                 // CRAS
-                var cras_alto_mateus = L.marker([-7.142055, -34.91382], {icon: crasIcon}).addTo(map).bindPopup('CRAS Alto do Mateus');
-                cras_cristo = L.marker([-7.165252, -34.872762], {icon: crasIcon}).addTo(map).bindPopup('CRAS Cristo/Rangel');
-                cras_cruz_armas = L.marker([-7.146578, -34.888187], {icon: crasIcon}).addTo(map).bindPopup('CRAS Cruz das Armas');
-                cras_ilha_bispo = L.marker([-7.12527, -34.900323], {icon: crasIcon}).addTo(map).bindPopup('CRAS Ilha do Bispo');
-                cras_gramame = L.marker([-7.203479, -34.884697], {icon: crasIcon}).addTo(map).bindPopup('CRAS Gramame');
-                cras_grotao = L.marker([-7.178329, -34.831493], {icon: crasIcon}).addTo(map).bindPopup('CRAS Grotao');
-                cras_mandacaru = L.marker([-7.098642, -34.866382], {icon: crasIcon}).addTo(map).bindPopup('CRAS Mandacaru');
-                cras_magabeira = L.marker([-7.172896, -34.843837], {icon: crasIcon}).addTo(map).bindPopup('CRAS Mangabeira');
-                cras_padre_ze = L.marker([-7.105312, -34.867173], {icon: crasIcon}).addTo(map).bindPopup('CRAS Padre Ze');
-                cras_sao_jose = L.marker([-7.106765, -34.840285], {icon: crasIcon}).addTo(map).bindPopup('CRAS Sao Jose');
-                cras_valentina = L.marker([-7.204871, -34.849219], {icon: crasIcon}).addTo(map).bindPopup('CRAS Valentina');
-                cras_gervasio_maia = L.marker([-7.19912, -34.881277], {icon: crasIcon}).addTo(map).bindPopup('CRAS Gervasio Maia');
-                cras_pretecao_social = L.marker([-7.168458, -34.864095], {icon: crasIcon}).addTo(map).bindPopup('Proteção Social Basica');
+                var cras_alto_mateus = L.marker([-7.142055, -34.91382], {icon: BateriaAusenteIcon}).addTo(map).bindPopup('CRAS Alto do Mateus');
+                cras_cristo = L.marker([-7.165252, -34.872762], {icon: BateriaAusenteIcon}).addTo(map).bindPopup('CRAS Cristo/Rangel');
+                cras_cruz_armas = L.marker([-7.146578, -34.888187], {icon: BateriaAusenteIcon}).addTo(map).bindPopup('CRAS Cruz das Armas');
+                cras_ilha_bispo = L.marker([-7.12527, -34.900323], {icon: BateriaAusenteIcon}).addTo(map).bindPopup('CRAS Ilha do Bispo');
+                cras_gramame = L.marker([-7.203479, -34.884697], {icon: BateriaAusenteIcon}).addTo(map).bindPopup('CRAS Gramame');
+                cras_grotao = L.marker([-7.178329, -34.831493], {icon: BateriaAusenteIcon}).addTo(map).bindPopup('CRAS Grotao');
+                cras_mandacaru = L.marker([-7.098642, -34.866382], {icon: BateriaAusenteIcon}).addTo(map).bindPopup('CRAS Mandacaru');
+                cras_magabeira = L.marker([-7.172896, -34.843837], {icon: BateriaAusenteIcon}).addTo(map).bindPopup('CRAS Mangabeira');
+                cras_padre_ze = L.marker([-7.105312, -34.867173], {icon: BateriaAusenteIcon}).addTo(map).bindPopup('CRAS Padre Ze');
+                cras_sao_jose = L.marker([-7.106765, -34.840285], {icon: BateriaAusenteIcon}).addTo(map).bindPopup('CRAS Sao Jose');
+                cras_valentina = L.marker([-7.204871, -34.849219], {icon: BateriaAusenteIcon}).addTo(map).bindPopup('CRAS Valentina');
+                cras_gervasio_maia = L.marker([-7.19912, -34.881277], {icon: BateriaAusenteIcon}).addTo(map).bindPopup('CRAS Gervasio Maia');
+                cras_pretecao_social = L.marker([-7.168458, -34.864095], {icon: BateriaAusenteIcon}).addTo(map).bindPopup('Proteção Social Basica');
 
                 var cras = l.layerGroup([
                   cras_alto_mateus,
