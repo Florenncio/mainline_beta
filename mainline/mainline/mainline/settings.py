@@ -44,7 +44,6 @@ INSTALLED_APPS = [
 
     #APP'S EXTERNOS
     'leaflet',
-    'svg',
 ]
 
 MIDDLEWARE = [

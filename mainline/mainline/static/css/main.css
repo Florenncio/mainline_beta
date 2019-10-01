@@ -1,13 +1,6 @@
-@font-face {
-    font-family: 'GothamBold';
-    src: local('GothamBold'),
-         url('../static/fonts/GothamBold.ttf') format("truetype");
-}
-
-body{
-    font-family: 'GothamBold';
-    src: local('GothamBold'),
-         url('../static/fonts/GothamBold.ttf') format("truetype");
+.marca{
+    width: 100px;
+    height: 82px;
 }
 
 #myChart{

@@ -1,5 +1,4 @@
 {% load static %}
-{% load svg%}
 {% load leaflet_tags %}
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -9,12 +8,13 @@
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <title>Mainline</title>
 
+        <!-- Import CSS -->
+        <link rel="stylesheet" type="text/css" href="{% static "css/materialize.min.css" %}">
+        <link rel=“stylesheet” href=“https://cdn.jsdelivr.net/npm/fontisto@v3.0.4/css/fontisto/fontisto.min.css”></i>
+
         <!-- My editions CSS -->
         <link rel="stylesheet" type="text/css" href="{% static "css/main.css" %}">
         <link rel="stylesheet" type="text/css" href="{% static "css/my_leaflet.css" %}">
-
-        <!-- Import CSS -->
-        <link rel="stylesheet" type="text/css" href="{% static "css/materialize.min.css" %}">
 
 
         {% leaflet_js %}
@@ -22,8 +22,8 @@
     </head>
     <body>
         <header>
-            <nav class="nav-wrapper indigo lighten-5">
-                <a class="brand-logo center title"><object id="front-page-logo" class="responsive-img" width="170px" type="image/svg+xml" data="{% svg 'cliente' %}">Your browser does not support SVG.</object></a>
+            <nav class="nav-wrapper indigo lighten-4">
+                <a class="brand-logo center marca"><img src='{% static "icons/svg/logo.svg" %}'><i class="black-text">Mainline</i></a>
             </nav>
         </header>
 
@@ -32,28 +32,28 @@
         </main>
 
 
-        <footer class="page-footer indigo lighten-5">
+        <footer class="page-footer indigo lighten-4 ">
           <div class="container">
             <div class="row">
               <div class="col l6 s12">
-                <h5 class="white-text">Footer Content</h5>
-                <p class="grey-text text-lighten-4">You can use rows and columns here to organize your footer content.</p>
+                <h5 class="black-text">Footer Content</h5>
+                <p class="black-text text-lighten-4">You can use rows and columns here to organize your footer content.</p>
               </div>
               <div class="col l4 offset-l2 s12">
-                <h5 class="white-text">Links</h5>
+                <h5 class="black-text">Links</h5>
                 <ul>
-                  <li><a class="grey-text text-lighten-3" href="#!">Link 1</a></li>
-                  <li><a class="grey-text text-lighten-3" href="#!">Link 2</a></li>
-                  <li><a class="grey-text text-lighten-3" href="#!">Link 3</a></li>
-                  <li><a class="grey-text text-lighten-3" href="#!">Link 4</a></li>
+                  <li><a class="black-text text-lighten-3" href="#!">Link 1</a></li>
+                  <li><a class="black-text text-lighten-3" href="#!">Link 2</a></li>
+                  <li><a class="black-text text-lighten-3" href="#!">Link 3</a></li>
+                  <li><a class="black-text text-lighten-3" href="#!">Link 4</a></li>
                 </ul>
               </div>
             </div>
           </div>
           <div class="footer-copyright">
             <div class="container">
-            © 2016 Copyright Text
-            <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
+            <a class="black-text">© 2016 Copyright Text</a>
+            <a class="black-text right" href="#!">More Links</a>
             </div>
           </div>
         </footer>
@@ -93,7 +93,7 @@
             function map_init_basic (map, options) {
                 
                 var AtmIcon = L.icon({
-                    iconUrl: '{% static "img/pin.png" %}',
+                    iconUrl: '{% static "icons/png/pin.png" %}',
                 
                     iconSize:     size,
                     iconAnchor:   ancho,
@@ -101,7 +101,7 @@
                 });
 
                 var BaseIcon = L.icon({
-                    iconUrl: '{% static "img/pin-25.png" %}',
+                    iconUrl: '{% static "icons/png/pin-25.png" %}',
                 
                     iconSize:     size,
                     iconAnchor:   ancho,
@@ -109,7 +109,7 @@
                 });
 
                 var BateriaAusenteIcon = L.icon({
-                    iconUrl: '{% static "img/pin-12.png" %}',
+                    iconUrl: '{% static "icons/png/pin-12.png" %}',
                 
                     iconSize:     size,
                     iconAnchor:   ancho,
@@ -117,7 +117,7 @@
                 });
 
                 var BateriaFracaIcon = L.icon({
-                    iconUrl: '{% static "img/bateria_fraca.png" %}',
+                    iconUrl: '{% static "icons/png/bateria_fraca.png" %}',
                 
                     iconSize:     size,
                     iconAnchor:   ancho,
@@ -125,7 +125,7 @@
                 });
 
                 var BateriaSemCargaIcon = L.icon({
-                    iconUrl: '{% static "img/bateria_sem_carga.png" %}',
+                    iconUrl: '{% static "icons/png/bateria_sem_carga.png" %}',
                 
                     iconSize:     size,
                     iconAnchor:   ancho,
@@ -133,7 +133,7 @@
                 });
 
                 var ClienteOffIcon = L.icon({
-                    iconUrl: '{% static "img/cliente_off.png" %}',
+                    iconUrl: '{% static "icons/png/cliente_off.png" %}',
                 
                     iconSize:     size,
                     iconAnchor:   ancho,
@@ -141,7 +141,7 @@
                 });
 
                 var ClienteOnIcon = L.icon({
-                    iconUrl: '{% static "img/cliente_on.png" %}',
+                    iconUrl: '{% static "icons/png/cliente_on.png" %}',
                 
                     iconSize:     size,
                     iconAnchor:   ancho,
@@ -149,7 +149,7 @@
                 });
 
                 var ClienteSemComIcon = L.icon({
-                    iconUrl: '{% static "img/cliente_sem_com.png" %}',
+                    iconUrl: '{% static "icons/png/cliente_sem_com.png" %}',
                 
                     iconSize:     size,
                     iconAnchor:   ancho,
@@ -157,7 +157,7 @@
                 });
 
                 var DesarmadosIcon = L.icon({
-                    iconUrl: '{% static "img/desarmados.png" %}',
+                    iconUrl: '{% static "icons/png/desarmados.png" %}',
                 
                     iconSize:     size,
                     iconAnchor:   ancho,
@@ -165,7 +165,7 @@
                 });
 
                 var DisparosIcon = L.icon({
-                    iconUrl: '{% static "img/disparos.png" %}',
+                    iconUrl: '{% static "icons/png/disparos.png" %}',
                 
                     iconSize:     size,
                     iconAnchor:   ancho,
@@ -173,7 +173,7 @@
                 });
 
                 var DisparosIsoIcon = L.icon({
-                    iconUrl: '{% static "img/disparos_iso.png" %}',
+                    iconUrl: '{% static "icons/png/disparos_iso.png" %}',
                 
                     iconSize:     size,
                     iconAnchor:   ancho,
@@ -181,7 +181,7 @@
                 });
 
                 var Os72hIcon = L.icon({
-                    iconUrl: '{% static "img/os_72h.png" %}',
+                    iconUrl: '{% static "icons/png/os_72h.png" %}',
                 
                     iconSize:     size,
                     iconAnchor:   ancho,
@@ -189,7 +189,7 @@
                 });
 
                 var Os92hIcon = L.icon({
-                    iconUrl: '{% static "img/os_92h.png" %}',
+                    iconUrl: '{% static "icons/png/os_92h.png" %}',
                 
                     iconSize:     size,
                     iconAnchor:   ancho,
@@ -197,7 +197,7 @@
                 });
 
                 var OsPenIcon = L.icon({
-                    iconUrl: '{% static "img/os_pen.png" %}',
+                    iconUrl: '{% static "icons/png/os_pen.png" %}',
                 
                     iconSize:     size,
                     iconAnchor:   ancho,
@@ -205,7 +205,7 @@
                 });
 
                 var PanicoIcon = L.icon({
-                    iconUrl: '{% static "img/panico.png" %}',
+                    iconUrl: '{% static "icons/png/panico.png" %}',
                 
                     iconSize:     size,
                     iconAnchor:   ancho,
@@ -213,7 +213,7 @@
                 });
 
                 var QuedaEnergiaIcon = L.icon({
-                    iconUrl: '{% static "img/queda_energia.png" %}',
+                    iconUrl: '{% static "icons/png/queda_energia.png" %}',
                 
                     iconSize:     size,
                     iconAnchor:   ancho,
